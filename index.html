@@ -3,8 +3,9 @@
   <head>
     <meta charset=utf-8>
     <title>Help me choose</title>
+    <link href="./main.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body class="bakgrund">
     <form action="/action_page.php">
       <input type="text" name="FirstName" value="First Name"><br>
       <input type="text" name="LastName" value="Last Name"></br>
@@ -13,15 +14,28 @@
     <a class="irc_mil i3597" rel="noopener" jsaction="mousedown:irc.rl;focus:irc.rl" data-noload="" target="_blank" tabindex="0" href="http://www.cuisinebizarre.se/kostcirkeln.html" data-ved="2ahUKEwj94sGknejgAhWCblAKHaEoBvsQjRx6BAgBEAU">
       <img class="irc_mi" src="http://www.cuisinebizarre.se/images/kostcirkel540.gif" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" alt="Relaterad bild" width="304" height="304" style="margin-top: 25px;" data-iml="1551693645888">
     </a>
-    <h1>Help me choose between..</h1>
-
-    <div>
-      <div>
+    <h1 class="greenText">Help me choose between..</h1>
+    <div class="inputSection">
+      <div class="inputs">
         <input placeholder="Something"></input>
       </div>
-      <button>Add</button>
+      <button class="addOption">Add</button>
     </div>
+    <div class="resultSection"></div>
     <button>Go!</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    $(function() {
+      $('.resultSection').hide()
+
+      var add_option = function() {
+        $('.inputs').append('<input></input>')
+      }
+
+      $('.addOption').click(add_option)
+    })
+    </script>
   </body>
 
 </html>
