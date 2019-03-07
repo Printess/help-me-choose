@@ -2,27 +2,29 @@
 <html lang=en>
   <head>
     <meta charset=utf-8>
-    <title>Help me choose</title>
+    <title>Help me choose!!!</title>
     <link href="./main.css" rel="stylesheet" type="text/css">
   </head>
   <body class="bakgrund">
+
     <form action="/action_page.php">
-      <input type="text" name="FirstName" value="First Name"><br>
+      <input type="text" name="FirstName" value="First Name"></br>
       <input type="text" name="LastName" value="Last Name"></br>
       <input type="submit" value="Submit">
     </form>
+
     <a class="irc_mil i3597" rel="noopener" jsaction="mousedown:irc.rl;focus:irc.rl" data-noload="" target="_blank" tabindex="0" href="http://www.cuisinebizarre.se/kostcirkeln.html" data-ved="2ahUKEwj94sGknejgAhWCblAKHaEoBvsQjRx6BAgBEAU">
       <img class="irc_mi" src="http://www.cuisinebizarre.se/images/kostcirkel540.gif" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" alt="Relaterad bild" width="304" height="304" style="margin-top: 25px;" data-iml="1551693645888">
     </a>
-    <h1 class="greenText">Help me choose between..</h1>
+    <h1 class="blueText">Help me choose between..</h1>
     <div class="inputSection">
       <div class="inputs">
-        <input placeholder="Something"></input>
+        <input class="choices"></input>
       </div>
       <button class="addOption">Add</button>
     </div>
     <div class="resultSection"></div>
-    <button>Go!</button>
+    <button class="submit">Go!</button>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
@@ -30,10 +32,26 @@
       $('.resultSection').hide()
 
       var add_option = function() {
-        $('.inputs').append('<input></input>')
+
+        $('.inputs').append('<input class="choices"></input>')
       }
 
       $('.addOption').click(add_option)
+
+var options = []
+var submit = function() {
+  $('.inputSection').hide()
+  $('.resultSection').css('display', 'flex')
+$('.choices').each(function() {
+  options.push($(this).val())
+})
+var winner = options[Math.floor(Math.random() * options.length)]
+console.log(winner)
+$('.resultSection').text(winner)
+
+}
+$('.submit').click(submit)
+
     })
     </script>
   </body>
